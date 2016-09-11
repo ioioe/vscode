@@ -1,0 +1,8 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+
+    "C_Cpp.clang_format_formatOnSave": false,
+    "editor.formatOnType": false
+}
