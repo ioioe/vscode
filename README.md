@@ -31,4 +31,10 @@ To enable code completion and navigation, you need to generate a c_cpp_propertie
 I suggest not to enable auto-formatting. But to enable auto-formatting, you can add following in the user settings:
 * C_Cpp.clang_format_formatOnSave - to format when you save your file.
 * editor.formatOnType - to format as you type (triggered on the ; character).
+
+## Latex
+Just install the latex extension: https://github.com/Microsoft/vscode-LaTeX This extension makes VSCode support latex language editing.
+
+To compile the tex to pdf is also simple. Just create a task.json file to add all commands needed (latex, bibtex, dvips, ps2pdf, open ...)
+An example tasks.json file is included. To run the tasks.json file, just type "ctrl + p", then type "task" + space, you will see the task name that you want to run.
     

@@ -1,0 +1,16 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "0.1.0",
+    "command": "sh",
+    "isShellCommand": true,
+    "args": ["-c"],
+    "showOutput": "always",
+    "suppressTaskName": true,
+    "tasks": [
+        {
+            "taskName": "latexCompile",
+            "args": ["cd /Users/kurtjc/Dropbox/CoopWork/eurasip/draft; latex -interction=nonstopmode journal2016.tex; dvips -o journal2016.ps journal2016.dvi; ps2pdf journal2016.ps; open journal2016.pdf"]
+        }
+    ]
+}
