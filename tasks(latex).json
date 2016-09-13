@@ -10,7 +10,7 @@
     "tasks": [
         {
             "taskName": "latexCompile",
-            "args": ["cd /Users/kurtjc/Dropbox/CoopWork/eurasip/draft; latex -interction=nonstopmode journal2016.tex; dvips -o journal2016.ps journal2016.dvi; ps2pdf journal2016.ps; open journal2016.pdf"]
+            "args": ["cd /Users/kurtjc/Dropbox/CoopWork/eurasip/draft; latex -interction=nonstopmode journal2016.tex; bibtex journal2016.aux; latex -interction=nonstopmode journal2016.tex; dvips -o journal2016.ps journal2016.dvi; ps2pdf journal2016.ps; open journal2016.pdf"]
         }
     ]
 }
