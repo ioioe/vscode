@@ -1,0 +1,15 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "0.1.0",
+    "command": "sh",
+    "isShellCommand": true,
+    "args": ["-c"],
+    "showOutput": "always",
+    "suppressTaskName": true,
+    "tasks": [
+        {
+            "taskName": "build",
+            "args": ["cd /home/cjia/Documents/Projects/MonoZoom/build; cmake -DCMAKE_BUILD_TYPE=Release ..; make"]
+        }
+    ]
