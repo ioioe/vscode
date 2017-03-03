@@ -34,25 +34,25 @@ VS Code support real-time preivew of markdown without any extension. Just click 
     * (The __init__.py of OpenCV 2.4.8 is included here for future use)
 
 ## C/C++
-1. install "C/C++" extension
-2. To build application you need to generate a tasks.json file:
+
+Install "C/C++" extension to provide basic supports.
+
+#### -- How to build application
+
+1. To build application you need to generate a tasks.json file:
     * Open the command palette (ctrl + shift + p)
     * Select the Tasks: Configure Task Runner command and you will see a list of task runner templates.
     * Select Others to create a task which runs an external command.
-3. Press "ctrl + shift + b" to build/run the task file
-4. Example tasks.json files are included
+2. Press "ctrl + shift + b" to build/run the task file
+3. Example tasks.json files are included
     * using g++ to build
     * using cmake + make to build
 
-#### Add including files for code completion/ navigation
-To enable code completion and navigation, you need to generate a c_cpp_properties.json file as following. A sample properties file is included.
-
-If the c_cpp_properties.json doesn't exit already, you can create it by searching "C/Cpp: Edit Configurations" in command palette
-* Hover over any green squiggle in a source file (e.g. a #include statement).
-* Click the lightbulb that appears underneath the mouse cursor.
-* Click Add include path to settings.
+#### -- Code completion/ navigation
+To enable code completion and navigation, you need to generate a "c_cpp_properties.json file" by searching "C/Cpp: Edit Configurations" in command palette. Then add needed include paths in "includePath". A sample properties file is included.
 
 Specifically, often in a project we need the function from another project that locates outside the current folder. In this case vscode cannot do navigation of any functions from the outside project. One way is to open the root folder in vscode so all projects that possibly interact are all opened. But this will make the parsing very slow. So a better way is just add the project needed to the include path in c_cpp_properties file then function navigation works fine:
+
 ```json
 "includePath": [
                 "/usr/include",
@@ -61,11 +61,24 @@ Specifically, often in a project we need the function from another project that 
             ],
 ```
 
+**Important**: Code navigation is not accurate at all. If there are multiple same definitions in the include paths then it will list all of them instead of choosing the correct one intelligently. Also sometimes it may just miss a definition. Also code navigation is not supported for local variables in a function. Hope this will be improved in future updates of "c/c++" extension
 
-#### Code formatting
+The completion/navigation experience can be improved a little by installing "C++ Intellisense" extension. Still not perfect, but auto-completion works better than nothing. Using this extension is not that simple:
+* Install GNU Global version > 6.5
+* run "gtags" in the project folder
+* re-run "gtags" to update tag files when making changes to the project
+
+#### -- Code formatting
+
+Code can be formmatted by selecting the block of code and then right click --> choose format.
+
 I suggest not to enable auto-formatting. But to enable auto-formatting, you can add following in the user settings:
 * C_Cpp.clang_format_formatOnSave - to format when you save your file.
 * editor.formatOnType - to format as you type (triggered on the ; character).
+
+#### -- Others
+* Use "ctrl +p" and then type "@" can list all functions in current file. It's easy to jump to a certain function.
+* Install "Include Autocomplete" extension to enable auto-complete when you type #include
 
 ## Latex
 Just install the latex extension: https://github.com/Microsoft/vscode-LaTeX This extension makes VSCode support latex language editing.
